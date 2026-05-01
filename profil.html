@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="id" class="overflow-x-hidden">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- GOOGLE SEARCH CONSOLE VERIFICATION -->
+    <meta name="google-site-verification" content="googlec1fa43a9b872f81b" />
+    <meta name="description" content="Website resmi MTs An Nashr Parung – Madrasah Tsanawiyah unggulan berbasis pendidikan Islam modern." />
+    <meta name="keywords" content="MTs An Nashr, MTs Parung, sekolah islam parung, madrasah bogor" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- OPEN GRAPH (Agar link cantik saat dishare di WA/FB) -->
+    <meta property="og:title" content="Profil Sekolah - MTs An-Nashr" />
+    <meta property="og:description" content="Membentuk generasi Qurani yang berakhlak mulia, unggul secara akademik, dan siap bersaing." />
+    <meta property="og:image" content="Assets/img/bgfix.jpeg" />
+
+    <title>Profil Sekolah - MTs An-Nashr</title>
+    <link rel="icon" href="Assets/img/logo2.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <style>
+      /* Smooth transition untuk navbar */
+      #navbar.scrolled {
+        background-color: rgba(39, 174, 96, 0.95);
+        backdrop-filter: blur(8px);
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      }
+    </style>
+  </head>
+
+  <body class="font-sans text-gray-800 antialiased overflow-x-hidden">
+    
+
+    <header
+      id="navbar"
+      class="fixed w-full top-0 z-50 bg-transparent transition-all duration-300"
+    >
+      <nav
+        class="container mx-auto flex justify-between items-center px-4 sm:px-6 py-3 sm:py-4"
+      >
+        <a
+          href="index.html"
+          class="flex h-full gap-3 md:text-2xl font-bold text-white tracking-wide z-50"
+        >
+          <img src="Assets/img/logo2.png" alt="Logo MTs An Nashr" width="35px" />
+          <div class="h-full flex items-center">
+            <h1 class="text-center pt-1 md:pt-0 drop-shadow-lg">MTs An Nashr</h1>
+          </div>
+        </a>
+
+        <button
+          id="menuBtn"
+          class="md:hidden text-white text-3xl z-50 focus:outline-none"
+        >
+          <ion-icon name="menu-outline"></ion-icon>
+        </button>
+
+        <div
+          id="menu"
+          class="fixed inset-0 z-40 flex flex-col items-start space-y-8 p-[3rem] bg-[#27AE60] transform translate-x-[40%] transition-transform duration-300 md:ps-[3rem] md:pt-0 md:pb-0 md:pe-0 md:relative md:bg-transparent md:flex-row md:space-y-0 md:space-x-8 md:translate-x-0 md:flex md:inset-auto md:justify-end"
+        >
+          <a
+            href="index.html"
+            onclick="closeMenu()"
+            class="nav-link font-bold text-white hover:text-yellow-300 transition drop-shadow-md"
+            >Home</a
+          >
+          <a
+            href="#home"
+            onclick="closeMenu()"
+            class="nav-link font-bold text-white hover:text-yellow-300 transition drop-shadow-md"
+            >Profil</a
+          >
+          <a
+            href="#tentang"
+            onclick="closeMenu()"
+            class="nav-link font-bold text-white hover:text-yellow-300 transition drop-shadow-md"
+            >Tentang</a
+          >
+          <a
+            href="#program"
+            onclick="closeMenu()"
+            class="nav-link font-bold text-white hover:text-yellow-300 transition drop-shadow-md"
+            >Program</a
+          >
+          <a
+            href="#fasilitas"
+            onclick="closeMenu()"
+            class="nav-link font-bold text-white hover:text-yellow-300 transition drop-shadow-md"
+            >Fasilitas</a
+          >
+         
+          <!-- MENU KONSISTEN -->
+          <a
+            href="ppdb.html"
+            onclick="closeMenu()"
+            class="nav-link font-bold text-white hover:text-yellow-300 transition drop-shadow-md"
+            >PPDB</a
+          >
+          <a
+            href="galeri.html"
+            onclick="closeMenu()"
+            class="nav-link font-bold text-white hover:text-yellow-300 transition drop-shadow-md"
+            >Galeri</a
+          >
+          <a
+            href="berita.html"
+            onclick="closeMenu()"
+            class="nav-link font-bold text-white hover:text-yellow-300 transition drop-shadow-md"
+            >Berita</a
+          >
+        </div>
+      </nav>
+    </header>
+
+<!-- GANTI BACKGROUND DI BAWAH INI!!! -->
+    <section
+      id="home"
+      class="relative bg-[url('Assets/img/kegiatan3.jpeg')] bg-cover bg-center min-h-screen text-white flex items-center justify-center px-4 pt-16"
+    >
+      <div
+        class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70"
+      ></div>
+
+      <div class="relative z-10 text-center max-w-4xl px-4">
+        <h1
+          class="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-6 leading-tight animate__animated animate__fadeInUp"
+        >
+          Leading Excellent <br />
+          <span class="text-[#27AE60]">Islamic Education</span>
+        </h1>
+
+        <p
+          class="text-base sm:text-lg md:text-xl mb-8 text-gray-200 max-w-2xl mx-auto animate__animated animate__fadeInUp animate__delay-1s"
+        >
+          Membentuk generasi Qurani yang berakhlak
+          mulia, unggul secara akademik, dan siap bersaing.
+        </p>
+
+       
+      </div>
+    </section>
+
+    <section id="tentang" class="py-16 md:py-24 bg-gray-50">
+      <div class="container mx-auto px-6">
+        <div class="text-center mb-12">
+          <h1 class="text-3xl md:text-4xl font-bold text-[#27AE60] mb-4">
+            Tentang MTs An Nashr
+          </h1>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+          <div class="flex justify-center w-full">
+            <div
+              class="relative w-full max-w-md lg:max-w-full h-64 sm:h-80 md:h-96 rounded-2xl overflow-hidden shadow-2xl group"
+            >
+              <img
+                src="Assets/img/foto 1.jpeg"
+                alt="Tentang Kami"
+                class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500"
+              />
+              <div
+                class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition"
+              ></div>
+            </div>
+          </div>
+
+          <div class="text-left space-y-6">
+            <div>
+              <h3
+                class="text-2xl font-bold text-[#27AE60] mb-2 flex items-center gap-2"
+              >
+                <ion-icon name="eye-outline"></ion-icon> Visi
+              </h3>
+              <p
+                class="text-gray-700 bg-white p-4 rounded-lg shadow-sm border-l-4 border-[#27AE60]"
+              >
+                Terwujudnya Generasi yang Rabbani, Unggul, Cendekia.
+              </p>
+            </div>
+
+            <div>
+              <h3
+                class="text-2xl font-bold text-[#27AE60] mb-2 flex items-center gap-2"
+              >
+                <ion-icon name="rocket-outline"></ion-icon> Misi
+              </h3>
+              <ul
+                class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-600 text-sm md:text-base"
+              >
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 mt-1">✔</span> Manajemen terpadu &
+                  profesional
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 mt-1">✔</span> Sistem pendidikan
+                  Islami
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 mt-1">✔</span> Kurikulum Terpadu
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 mt-1">✔</span> Mutu SDM
+                  Berkualitas
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 mt-1">✔</span> Teknologi Informasi
+                  Optimal
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500 mt-1">✔</span> Pembiasaan Ibadah &
+                  Al-Qur'an
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="program"
+      class="py-16 md:py-24 bg-gray-50 relative overflow-hidden"
+    >
+      <div
+        class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-5 pointer-events-none"
+      >
+        <div
+          class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-green-500 blur-3xl"
+        ></div>
+        <div
+          class="absolute top-1/2 left-0 w-72 h-72 rounded-full bg-blue-500 blur-3xl"
+        ></div>
+      </div>
+
+      <div class="container mx-auto px-6 text-center relative z-10">
+        <h1
+          class="text-3xl md:text-4xl font-bold text-gray-800 mb-2 animate__animated animate__fadeInUp"
+        >
+          Program <span class="text-[#27AE60]">Unggulan</span>
+        </h1>
+        <p
+          class="text-gray-500 mb-12 max-w-2xl mx-auto animate__animated animate__fadeInUp animate__delay-1s"
+        >
+          Kurikulum terpadu yang dirancang untuk menyeimbangkan kecerdasan
+          spiritual, intelektual, dan sosial.
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-6">
+          <div
+            onclick="openProgramModal('tahfizh')" class="program-card cursor-pointer group w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(30%-1.5rem)] bg-white border border-gray-100 shadow-lg rounded-2xl p-8 hover:-translate-y-2 hover:shadow-2xl hover:border-green-200 transition duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center text-green-600 text-3xl mb-6 mx-auto group-hover:bg-green-600 group-hover:text-white transition duration-300 shadow-sm"
+            >
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">TAHFIZH</h3>
+            <p class="text-green-600 font-medium text-sm mb-2">Metode Mutqin</p>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Target hafalan berkualitas dengan setoran rutin dan ujian berkala.
+            </p>
+          </div>
+
+          <div
+            onclick="openProgramModal('tahsin')" class="program-card cursor-pointer group w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(30%-1.5rem)] bg-white border border-gray-100 shadow-lg rounded-2xl p-8 hover:-translate-y-2 hover:shadow-2xl hover:border-cyan-200 transition duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-cyan-100 rounded-2xl flex items-center justify-center text-cyan-600 text-3xl mb-6 mx-auto group-hover:bg-cyan-600 group-hover:text-white transition duration-300 shadow-sm"
+            >
+              <ion-icon name="mic-outline"></ion-icon>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">TAHSIN</h3>
+            <p class="text-cyan-600 font-medium text-sm mb-2">Metode Qiroati</p>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Perbaikan bacaan Al-Qur'an sesuai tajwid dan makhraj yang benar.
+            </p>
+          </div>
+
+          <div
+            onclick="openProgramModal('mnr')" class="program-card cursor-pointer group w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(30%-1.5rem)] bg-white border border-gray-100 shadow-lg rounded-2xl p-8 hover:-translate-y-2 hover:shadow-2xl hover:border-blue-200 transition duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 text-3xl mb-6 mx-auto group-hover:bg-blue-600 group-hover:text-white transition duration-300 shadow-sm"
+            >
+              <ion-icon name="calculator-outline"></ion-icon>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">MNR</h3>
+            <p class="text-blue-600 font-medium text-sm mb-2">
+              Matematika Nalaria Realistik
+            </p>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Mengasah logika berpikir kritis dalam memecahkan masalah
+              matematika.
+            </p>
+          </div>
+
+          <div
+            onclick="openProgramModal('snr')" class="program-card cursor-pointer group w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(30%-1.5rem)] bg-white border border-gray-100 shadow-lg rounded-2xl p-8 hover:-translate-y-2 hover:shadow-2xl hover:border-purple-200 transition duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center text-purple-600 text-3xl mb-6 mx-auto group-hover:bg-purple-600 group-hover:text-white transition duration-300 shadow-sm"
+            >
+              <ion-icon name="flask-outline"></ion-icon>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">SNR</h3>
+            <p class="text-purple-600 font-medium text-sm mb-2">
+              Sains Nalaria Realistik
+            </p>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Pembelajaran sains berbasis eksperimen dan pemahaman fenomena
+              alam.
+            </p>
+          </div>
+
+          <div
+            onclick="openProgramModal('bahasa_arab')" class="program-card cursor-pointer group w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(30%-1.5rem)] bg-white border border-gray-100 shadow-lg rounded-2xl p-8 hover:-translate-y-2 hover:shadow-2xl hover:border-yellow-200 transition duration-300"
+          >
+            <div
+              class="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center text-yellow-600 text-3xl mb-6 mx-auto group-hover:bg-yellow-500 group-hover:text-white transition duration-300 shadow-sm"
+            >
+              <ion-icon name="chatbubbles-outline"></ion-icon>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">BAHASA ARAB</h3>
+            <p class="text-yellow-600 font-medium text-sm mb-2">
+              Durusul Lughoh
+            </p>
+            <p class="text-gray-500 text-sm leading-relaxed">
+              Penguasaan kosa kata dan percakapan harian (Daily Conversation).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="fasilitas"
+      class="py-16 bg-gray-50 overflow-hidden h-[100vh] grid place-items-center relative w-full shadow-[0_3px_10px_rgba(0,0,0,0.3)]"
+    >
+      <ul class="slider">
+        <li
+          class="item"
+          style="background-image: url('Assets/img/teras2.jpeg')"
+        >
+          <div class="content">
+            <h2 class="title">"Suasana Nyaman"</h2>
+            <p class="description">
+              Suasana selasar sekolah yang bersih dengan lantai keramik
+              mengkilap dan penataan yang rapi, menciptakan kesan pertama yang
+              ramah dan siap menyambut siswa.
+            </p>
+          </div>
+        </li>
+        <li
+          class="item"
+          style="background-image: url('Assets/img/ruangkelas.jpeg')"
+        >
+          <div class="content">
+            <h2 class="title">"Ruang belajar nyaman"</h2>
+            <p class="description">
+              Kelas dengan pencahayaan terang dan kursi belajar modern yang
+              tertata rapi, didesain khusus untuk menjaga fokus dan kenyamanan
+              siswa saat menerima materi.
+            </p>
+          </div>
+        </li>
+        <li
+          class="item"
+          style="background-image: url('Assets/img/perpus.jpeg')"
+        >
+          <div class="content">
+            <h2 class="title">"Pojok Literasi"</h2>
+            <p class="description">
+              Perpustakaan nyaman dengan konsep lesehan beralas karpet lembut
+              dan rak kayu estetik, tempat favorit siswa untuk membaca buku
+              dengan santai.
+            </p>
+          </div>
+        </li>
+        <li
+          class="item"
+          style="background-image: url('Assets/img/masjid2.jpg')"
+        >
+          <div class="content">
+            <h2 class="title">"Masjid"</h2>
+            <p class="description">
+              Tempat ibadah berkonsep terbuka yang sejuk dan luas, menjadi pusat
+              pembinaan karakter religius serta kegiatan keagamaan seluruh warga
+              sekolah.
+            </p>
+          </div>
+        </li>
+      </ul>
+      <nav class="nav">
+        <ion-icon class="btn prev" name="arrow-back-outline"></ion-icon>
+        <ion-icon class="btn next" name="arrow-forward-outline"></ion-icon>
+      </nav>
+    </section>
+
+    
+
+    <!-- PROGRAM MODAL -->
+    <div id="program-modal" class="fixed inset-0 z-[120] bg-black/60 hidden flex items-center justify-center p-4 backdrop-blur-sm transition-opacity duration-300 opacity-0" onclick="closeProgramModal()">
+      <div id="program-modal-content" class="bg-white rounded-3xl shadow-2xl overflow-hidden max-w-2xl w-full max-h-[90vh] flex flex-col transform scale-90 transition-transform duration-300" onclick="event.stopPropagation()">
+        <!-- Header Image -->
+        <div class="h-48 md:h-64 w-full relative">
+          <img id="modal-img" src="" alt="Program Image" class="w-full h-full object-cover" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6">
+            <h3 id="modal-title" class="text-3xl md:text-4xl font-extrabold text-white mb-1"></h3>
+            <p id="modal-method" class="text-[#27AE60] font-bold text-sm md:text-base uppercase tracking-widest bg-white/90 px-3 py-1 w-fit rounded-lg shadow-sm"></p>
+          </div>
+          <button onclick="closeProgramModal()" class="absolute top-4 right-4 bg-black/50 text-white hover:bg-red-500 w-10 h-10 rounded-full flex items-center justify-center backdrop-blur-md transition">
+            <ion-icon name="close-outline" class="text-2xl"></ion-icon>
+          </button>
+        </div>
+        
+        <!-- Body -->
+        <div class="p-6 md:p-8 overflow-y-auto custom-scrollbar flex-grow">
+          <div id="modal-desc" class="text-gray-600 leading-relaxed text-sm md:text-base mb-6"></div>
+          
+          <div class="bg-gray-50 border border-gray-100 rounded-2xl p-5 mb-6">
+            <h4 class="text-[#27AE60] font-bold mb-2 flex items-center gap-2"><ion-icon name="person-circle-outline"></ion-icon> Pengembang / Pencetus</h4>
+            <p id="modal-developer" class="text-gray-700 text-sm"></p>
+          </div>
+          
+          <div>
+            <h4 class="text-[#27AE60] font-bold mb-3 flex items-center gap-2"><ion-icon name="star-outline"></ion-icon> Keunggulan Metode</h4>
+            <ul id="modal-advantages" class="space-y-3 text-sm md:text-base text-gray-700"></ul>
+          </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="p-6 border-t border-gray-100 bg-gray-50 flex justify-end">
+          <button onclick="closeProgramModal()" class="px-6 py-2.5 bg-[#27AE60] hover:bg-green-700 text-white font-bold rounded-xl transition shadow-lg flex items-center gap-2">Tutup</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-gray-900 text-white py-10">
+      <div class="container mx-auto px-6 text-center">
+        <div class="image w-full flex justify-center mb-2">
+          <img src="Assets/img/logo2.png" alt="Logo MTs An Nashr" width="50px" />
+        </div>
+
+        <h2 class="text-2xl font-bold mb-4">MTs An Nashr</h2>
+
+        <div class="flex flex-col justify-center space-x-6 mb-8">
+          <div class="sosmed flex justify-center space-x-6 mb-2">
+            <a
+              href="https://www.instagram.com/mts.annashrparung/#"
+              class="text-gray-400 hover:text-[#27AE60] text-2xl transition"
+              ><ion-icon name="logo-instagram"></ion-icon
+            ></a>
+            <a
+              href="https://web.facebook.com/profile.php?id=100087312590437"
+              class="text-gray-400 hover:text-[#27AE60] text-2xl transition"
+              ><ion-icon name="logo-facebook"></ion-icon
+            ></a>
+            <a
+              href="https://www.youtube.com/@AnnashrParung"
+              class="text-gray-400 hover:text-[#27AE60] text-2xl transition"
+              ><ion-icon name="logo-youtube"></ion-icon
+            ></a>
+          </div>
+
+          <p class="text-gray-500 text-sm">
+            Jl. Balai Desa, Gg. Bambu Kuning, 02/03, Jabon Mekar, Kec. Parung,
+            Kab. Bogor
+          </p>
+        </div>
+        <div class="border-t border-gray-800 pt-6">
+          <p class="text-gray-500 text-sm">
+            &copy; 2026 MTs An Nashr. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- SCRIPT DATA & LOGIKA MODAL PROGRAM -->
+    <script>
+      const programData = {
+        'tahfizh': {
+          title: 'TAHFIZH',
+          method: 'Metode Mutqin',
+          image: 'Assets/img/bukumutqin1.jpeg',
+          description: `
+            <p class="mb-4">Metode Mutqin adalah metode menghafal Al-Qur’an yang menekankan pada kualitas hafalan yang kuat, terjaga, dan tidak mudah lupa. Dalam metode ini, siswa tidak hanya dituntut untuk menambah hafalan baru, tetapi juga secara konsisten melakukan pengulangan (murajaah) agar hafalan tetap melekat dalam jangka panjang.</p>
+            <p class="mb-4">Pendekatan ini menggabungkan metode talaqqi (setoran langsung kepada guru), murajaah harian, serta evaluasi berkala. Dengan sistem ini, hafalan siswa menjadi lebih terstruktur, disiplin, dan berkualitas tinggi.</p>
+          `,
+          developer: 'Dikembangkan oleh Taufik Fadlah praktisi pendidikan Al-Qur’an modern dan banyak digunakan di lembaga tahfidz di Indonesia.',
+          advantages: [
+            'Hafalan lebih kuat dan tidak mudah lupa',
+            'Sistem pengulangan terstruktur',
+            'Evaluasi rutin dan terarah',
+            'Melatih kedisiplinan dan konsistensi'
+          ]
+        },
+        'tahsin': {
+          title: 'TAHSIN',
+          method: 'Metode Qiroati',
+          image: 'Assets/img/qiroati.webp',
+          description: `
+            <p class="mb-4">Metode Qiroati adalah metode praktis membaca Al-Qur'an yang menekankan pada bacaan tartil sesuai kaidah tajwid sejak dini. Siswa diajarkan membaca dengan lancar, cepat, dan tepat.</p>
+            <p class="mb-4">Fokus utama metode ini adalah praktik langsung (talqin), sehingga siswa terbiasa melafalkan huruf hijaiyah sesuai makhraj dan sifatnya dengan benar.</p>
+          `,
+          developer: 'KH. Dachlan Salim Zarkasyi',
+          advantages: [
+            'Bacaan sesuai kaidah tajwid',
+            'Metode praktis dan mudah dipahami',
+            'Fokus pada kelancaran dan ketepatan'
+          ]
+        },
+        'mnr': {
+          title: 'MNR',
+          method: 'Matematika Nalaria Realistik',
+          image: 'Assets/img/mnr.jpeg',
+          description: `
+            <p class="mb-4">Matematika Nalaria Realistik (MNR) adalah pendekatan pembelajaran matematika yang menitikberatkan pada penggunaan nalar dan logika dalam memecahkan masalah kehidupan sehari-hari (realistik).</p>
+            <p class="mb-4">Siswa dilatih untuk tidak sekadar menghafal rumus, melainkan memahami konsep dan mengaplikasikannya dalam berbagai situasi, membentuk pola pikir kritis dan kreatif.</p>
+          `,
+          developer: 'Klinik Pendidikan MIPA (KPM) Indonesia',
+          advantages: [
+            'Meningkatkan daya nalar dan logika',
+            'Pembelajaran yang menyenangkan dan bermakna',
+            'Mampu memecahkan masalah tingkat tinggi (HOTS)'
+          ]
+        },
+        'snr': {
+          title: 'SNR',
+          method: 'Sains Nalaria Realistik',
+          image: 'Assets/img/ruangkelas.jpeg',
+          description: `
+            <p class="mb-4">Sains Nalaria Realistik (SNR) adalah metode pembelajaran sains yang mengajak siswa mengamati, menanya, dan bereksperimen terhadap fenomena alam di sekitarnya menggunakan penalaran yang logis.</p>
+            <p class="mb-4">Metode ini membangun rasa ingin tahu yang tinggi serta membekali siswa dengan keterampilan berpikir saintifik sejak usia sekolah menengah pertama.</p>
+          `,
+          developer: 'Klinik Pendidikan MIPA (KPM) Indonesia',
+          advantages: [
+            'Pemahaman konsep sains melalui observasi nyata',
+            'Meningkatkan keterampilan bereksperimen',
+            'Menumbuhkan rasa takjub terhadap ciptaan Allah'
+          ]
+        },
+        'bahasa_arab': {
+          title: 'BAHASA ARAB',
+          method: 'Durusul Lughoh',
+          image: 'Assets/img/kegiatan3.jpeg',
+          description: `
+            <p class="mb-4">Pendekatan komprehensif dalam mempelajari Bahasa Arab yang mengintegrasikan kemampuan mendengar, berbicara, membaca, dan menulis. Program ini bertujuan agar siswa terbiasa menggunakan Bahasa Arab sebagai alat komunikasi harian dan bahasa pengantar agama.</p>
+            <p class="mb-4">Dengan menggunakan metode Durusul Lughoh dan pembiasaan (biah lughawiyah), siswa secara bertahap akan memiliki kekayaan kosakata (mufradat) dan keberanian berbicara.</p>
+          `,
+          developer: 'Universitas Islam Madinah (Adaptasi Modern)',
+          advantages: [
+            'Penguasaan kosakata harian yang aplikatif',
+            'Keberanian berkomunikasi secara lisan (Muhadatsah)',
+            'Membantu dalam pemahaman literatur berbahasa Arab'
+          ]
+        }
+      };
+
+      function openProgramModal(id) {
+        const data = programData[id];
+        if (!data) return;
+
+        document.getElementById('modal-title').innerText = data.title;
+        document.getElementById('modal-method').innerText = data.method;
+        document.getElementById('modal-img').src = data.image;
+        document.getElementById('modal-desc').innerHTML = data.description;
+        document.getElementById('modal-developer').innerText = data.developer;
+        
+        const advList = document.getElementById('modal-advantages');
+        advList.innerHTML = data.advantages.map(adv => 
+          `<li class="flex items-start gap-3">
+             <span class="text-[#27AE60] mt-0.5 text-lg"><ion-icon name="checkmark-circle"></ion-icon></span> 
+             <span class="leading-relaxed">${adv}</span>
+           </li>`
+        ).join('');
+
+        const modal = document.getElementById('program-modal');
+        const modalContent = document.getElementById('program-modal-content');
+        
+        modal.classList.remove('hidden');
+        // Jeda sangat tipis untuk memastikan transisi Tailwind bisa dijalankan setelah display diubah menjadi block
+        setTimeout(() => {
+          modal.classList.remove('opacity-0');
+          modalContent.classList.remove('scale-90');
+          modalContent.classList.add('scale-100');
+        }, 10);
+        
+        document.body.style.overflow = 'hidden'; // Menghentikan scroll pada background
+      }
+
+      function closeProgramModal() {
+        const modal = document.getElementById('program-modal');
+        const modalContent = document.getElementById('program-modal-content');
+        
+        modal.classList.add('opacity-0');
+        modalContent.classList.remove('scale-100');
+        modalContent.classList.add('scale-90');
+        
+        setTimeout(() => {
+          modal.classList.add('hidden');
+          document.body.style.overflow = 'auto'; // Mengaktifkan kembali scroll pada background
+        }, 300);
+      }
+    </script>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

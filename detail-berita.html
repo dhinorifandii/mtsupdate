@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id" class="overflow-x-hidden">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Baca Berita - MTs An-Nashr</title>
+    <link rel="icon" href="Assets/img/logo2.png" />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
+    <style>
+      #navbar.scrolled { background-color: rgba(39, 174, 96, 0.95); backdrop-filter: blur(8px); box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); }
+      
+      /* Style khusus untuk hasil render dari text editor (Quill) */
+      .berita-content p { margin-bottom: 1rem; line-height: 1.8; color: #4a5568; }
+      .berita-content h1, .berita-content h2, .berita-content h3 { font-weight: 700; margin-top: 1.5rem; margin-bottom: 0.75rem; color: #2d3748; }
+      .berita-content h1 { font-size: 1.875rem; }
+      .berita-content h2 { font-size: 1.5rem; }
+      .berita-content ul, .berita-content ol { margin-bottom: 1rem; padding-left: 1.5rem; }
+      .berita-content ul { list-style-type: disc; }
+      .berita-content ol { list-style-type: decimal; }
+      .berita-content li { margin-bottom: 0.5rem; color: #4a5568; }
+      .berita-content blockquote { border-left: 4px solid #27AE60; padding-left: 1rem; font-style: italic; color: #718096; margin-bottom: 1rem; }
+      .berita-content a { color: #27AE60; text-decoration: underline; }
+      .berita-content strong { font-weight: 700; color: #2d3748; }
+    </style>
+  </head>
+
+  <body class="font-sans text-gray-800 antialiased bg-gray-50 flex flex-col min-h-screen">
+    <header id="navbar" class="fixed w-full top-0 z-50 bg-[#27AE60] py-4 shadow-md">
+      <nav class="container mx-auto flex justify-between items-center px-4 sm:px-6">
+        <a href="index.html" class="flex items-center gap-3 text-xl font-bold text-white tracking-wide">
+          <ion-icon name="arrow-back-outline" class="text-2xl mr-2"></ion-icon> Kembali
+        </a>
+      </nav>
+    </header>
+
+    <main class="flex-grow py-28 px-4 sm:px-6">
+      <div class="container mx-auto max-w-4xl bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100 min-h-[50vh] relative">
+        
+        <!-- Loading State -->
+        <div id="loading-state" class="absolute inset-0 bg-white z-10 flex flex-col items-center justify-center text-gray-500 animate-pulse">
+            <ion-icon name="newspaper-outline" class="text-6xl mb-4 text-[#27AE60]"></ion-icon>
+            <p class="text-lg">Memuat Artikel...</p>
+        </div>
+
+        <!-- Article Content -->
+        <div id="article-content" class="hidden">
+            <div class="h-[40vh] md:h-[60vh] overflow-hidden relative">
+                <img id="detail-image" src="" alt="Cover Berita" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-6 md:p-10">
+                    <span id="detail-date" class="text-[#27AE60] font-bold text-sm tracking-wider uppercase mb-2 bg-white/90 px-3 py-1 w-fit rounded-lg shadow"></span>
+                    <h1 id="detail-title" class="text-2xl md:text-5xl font-extrabold text-white leading-tight"></h1>
+                </div>
+            </div>
+            
+            <div class="p-6 md:p-10 lg:px-16 lg:py-12">
+                <div id="detail-body" class="berita-content text-base md:text-lg">
+                    <!-- Konten HTML dari Quill Editor (Admin) akan masuk ke sini -->
+                </div>
+                
+                <div class="mt-12 pt-8 border-t border-gray-200 flex justify-center">
+                    <p class="text-gray-400 text-sm">Bagikan artikel ini:</p>
+                </div>
+                <div class="flex justify-center gap-4 mt-4">
+                    <button onclick="window.open('https://api.whatsapp.com/send?text='+encodeURIComponent(window.location.href))" class="w-10 h-10 rounded-full bg-green-500 text-white flex items-center justify-center hover:bg-green-600 transition"><ion-icon name="logo-whatsapp"></ion-icon></button>
+                    <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(window.location.href))" class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition"><ion-icon name="logo-facebook"></ion-icon></button>
+                </div>
+            </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="bg-gray-900 text-white py-12 mt-auto">
+      <div class="container mx-auto px-6 text-center">
+        <img src="Assets/img/logo2.png" alt="Logo" class="w-12 h-12 mx-auto mb-4" />
+        <h2 class="text-2xl font-bold mb-2">MTs An Nashr</h2>
+        <div class="border-t border-gray-800 pt-8 mt-6">
+          <p class="text-gray-600 text-xs tracking-widest uppercase">&copy; 2026 MTs An Nashr. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script>
+        const supabaseUrl = 'https://ejhmwxqbpmjkvudazjmc.supabase.co';
+        const supabaseKey = 'sb_publishable_pfloSKirXdrAE2lj7ygHNg_o-aMJPjz';
+        const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Ambil ID dari URL (contoh: detail-berita.html?id=123)
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+
+            if (!id) {
+                document.getElementById('loading-state').innerHTML = `<p class="text-red-500 text-xl font-bold">Artikel tidak ditemukan.</p>`;
+                return;
+            }
+
+            const { data, error } = await supabaseClient.from('berita').select('*').eq('id', id).single();
+            
+            if (error || !data) {
+                document.getElementById('loading-state').innerHTML = `<p class="text-red-500 text-xl font-bold">Gagal memuat artikel.</p>`;
+                return;
+            }
+
+            document.getElementById('detail-title').innerText = data.judul;
+            document.getElementById('detail-date').innerText = new Date(data.created_at).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
+            document.getElementById('detail-image').src = data.image_url;
+            document.getElementById('detail-body').innerHTML = data.konten; // Render HTML dari editor
+            
+            document.getElementById('loading-state').classList.add('hidden');
+            document.getElementById('article-content').classList.remove('hidden');
+        });
+    </script>
+  </body>
+</html>
