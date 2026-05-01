@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Data Seeder - PPDB MTs An-Nashr</title>
+    <link rel="icon" href="Assets/img/logo2.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- SWEETALERT2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+    <div class="text-center bg-white p-8 rounded-2xl shadow-xl w-full max-w-lg">
+        <img src="Assets/img/logo2.png" alt="Logo" class="w-16 mx-auto mb-4">
+        <h1 class="text-2xl font-bold text-gray-800 mb-2">PPDB Data Generator</h1>
+        <p class="text-gray-600 mb-6">Klik tombol di bawah untuk membuat 100 data siswa acak dan memasukkannya ke database Supabase untuk keperluan testing.</p>
+        <button id="generate-btn" class="w-full bg-green-600 text-white px-6 py-4 rounded-xl font-bold hover:bg-green-700 transition text-lg shadow-lg">
+            Generate 100 Data Siswa
+        </button>
+        <p id="status" class="mt-6 text-sm text-gray-500 h-5"></p>
+    </div>
+
+    <script>
+        // ==========================================
+        // KONFIGURASI - SESUAIKAN DENGAN PROYEK ANDA
+        // ==========================================
+        const supabaseUrl = 'https://ejhmwxqbpmjkvudazjmc.supabase.co';
+        const supabaseKey = 'sb_publishable_pfloSKirXdrAE2lj7ygHNg_o-aMJPjz'; // Gunakan public key
+        const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+
+        // ==========================================
+        // DATA SOURCE UNTUK RANDOMISASI
+        // ==========================================
+        const maleFirstNames = ["Budi", "Agus", "Eko", "Dedi", "Joko", "Asep", "Ujang", "Bambang", "Taufik", "Rizki", "Fajar", "Hadi", "Indra", "Lukman", "Muhammad"];
+        const femaleFirstNames = ["Siti", "Ani", "Sri", "Dewi", "Rina", "Lina", "Wati", "Yuni", "Fitri", "Eka", "Aisyah", "Nurul", "Putri", "Dian", "Maya"];
+        const lastNames = ["Santoso", "Wijaya", "Kusuma", "Hidayat", "Nugroho", "Setiawan", "Gunawan", "Pratama", "Lesmana", "Saputra", "Maulana", "Hakim", "Firmansyah"];
+        const cities = ["Bogor", "Jakarta", "Depok", "Tangerang", "Bekasi", "Bandung", "Cianjur", "Sukabumi", "Parung"];
+        const occupations = ["Wiraswasta", "Karyawan Swasta", "PNS", "Guru", "Petani", "Pedagang", "Buruh", "Ibu Rumah Tangga", "TNI/POLRI", "Dokter"];
+        const schoolPrefixes = ["SDN", "MI", "SDIT", "SDS"];
+        const schoolSuffixes = ["Jaya", "Mekar", "Baru", "Permai", "Cendekia", "Harapan", "Bangsa", "Islam Terpadu"];
+        const statuses = ['pending', 'pending', 'pending', 'pending', 'pending', 'pending', 'diterima', 'diterima', 'diterima', 'ditolak']; // 60% pending, 30% diterima, 10% ditolak
+
+        // ==========================================
+        // FUNGSI-FUNGSI PEMBANTU
+        // ==========================================
+        const getRandomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+        const getRandomDate = (start, end) => new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+        const formatToYMD = (date) => date.toISOString().split('T')[0];
+        const getRandomNumberString = (length) => Math.random().toString().slice(2, 2 + length);
+        const getRandomPhoneNumber = () => `08${getRandomNumberString(10)}`;
+
+        // ==========================================
+        // FUNGSI UTAMA GENERATOR
+        // ==========================================
+        document.getElementById('generate-btn').addEventListener('click', async () => {
+            const btn = document.getElementById('generate-btn');
+            const statusEl = document.getElementById('status');
+
+            if (!confirm("Apakah Anda yakin ingin menambahkan 100 data acak ke tabel 'ppdb'?")) {
+                return;
+            }
+
+            btn.disabled = true;
+            btn.innerText = "Membuat data...";
+            statusEl.innerText = "Mohon tunggu, sedang mempersiapkan 100 data siswa...";
+
+            const students = [];
+
+            for (let i = 0; i < 100; i++) {
+                const isMale = Math.random() > 0.5;
+                const firstName = isMale ? getRandomItem(maleFirstNames) : getRandomItem(femaleFirstNames);
+                const lastName = getRandomItem(lastNames);
+                const fullName = `${firstName} ${lastName}`;
+                const birthDate = getRandomDate(new Date(2010, 0, 1), new Date(2012, 11, 31));
+
+                const student = {
+                    nama: fullName,
+                    jenis_kelamin: isMale ? 'Laki-laki' : 'Perempuan',
+                    tempat_lahir: getRandomItem(cities),
+                    tanggal_lahir: formatToYMD(birthDate),
+                    nisn: `00${getRandomNumberString(8)}`,
+                    agama: 'Islam',
+                    alamat: `Jl. ${getRandomItem(lastNames)} No. ${Math.floor(Math.random() * 100) + 1}, ${getRandomItem(cities)}`,
+                    
+                    nama_ayah: `${getRandomItem(maleFirstNames)} ${lastName}`,
+                    nama_ibu: `${getRandomItem(femaleFirstNames)} ${getRandomItem(lastNames)}`,
+                    pekerjaan_ayah: getRandomItem(occupations),
+                    pekerjaan_ibu: getRandomItem(occupations),
+                    no_hp_ortu: getRandomPhoneNumber(),
+                    
+                    no_hp_siswa: Math.random() > 0.3 ? getRandomPhoneNumber() : null,
+                    email_siswa: Math.random() > 0.3 ? `${firstName.toLowerCase()}.${lastName.toLowerCase()}@example.com` : null,
+                    
+                    asal_sekolah: `${getRandomItem(schoolPrefixes)} ${getRandomItem(schoolSuffixes)} ${Math.floor(Math.random() * 5) + 1}`,
+                    alamat_sekolah: `Jl. Pendidikan No. ${Math.floor(Math.random() * 20) + 1}, ${getRandomItem(cities)}`,
+                    tahun_lulus: '2026',
+                    
+                    status: getRandomItem(statuses),
+
+                    // Kolom berkas dinonaktifkan untuk sementara agar seeder bisa berjalan.
+                    // Jika kolom ini sudah ada di database Supabase Anda, silakan hapus komentar di bawah ini.
+                    // berkas_ktp: null,
+                    // berkas_kk: null,
+                    // berkas_akta: null,
+                    // berkas_ijazah: null,
+                };
+                students.push(student);
+            }
+
+            statusEl.innerText = `Data siap. Mengirim ${students.length} data ke Supabase...`;
+            btn.innerText = "Mengirim...";
+
+            try {
+                // NOTE: Untuk menjalankan ini, Anda perlu menonaktifkan RLS (Row Level Security) pada tabel 'ppdb' untuk sementara,
+                // atau membuat policy yang mengizinkan operasi INSERT.
+                const { error } = await supabaseClient.from('ppdb').insert(students);
+                if (error) {
+                    throw error;
+                }
+                statusEl.innerText = `Berhasil! ${students.length} data siswa acak telah ditambahkan.`;
+                btn.innerText = "Selesai!";
+                Swal.fire('Berhasil!', '100 data siswa acak berhasil ditambahkan ke database!', 'success');
+            } catch (error) {
+                console.error("Supabase Error:", error);
+                statusEl.innerText = `Error: ${error.message}`;
+                btn.innerText = "Gagal!";
+                Swal.fire('Gagal!', `Gagal menambahkan data: ${error.message}. Cek console browser untuk detail.`, 'error');
+            } finally {
+                setTimeout(() => {
+                    btn.disabled = false;
+                    btn.innerText = "Generate 100 Data Siswa";
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>
