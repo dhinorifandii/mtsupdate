@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" class="overflow-x-hidden">
+<html lang="id" class="overflow-x-hidden scroll-smooth scroll-pt-20">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -53,6 +53,9 @@
         <div id="menu" class="fixed inset-0 z-40 flex flex-col items-start space-y-8 p-[3rem] bg-[#27AE60] transform translate-x-[40%] transition-transform duration-300 md:ps-[3rem] md:pt-0 md:pb-0 md:pe-0 md:relative md:bg-transparent md:flex-row md:space-y-0 md:space-x-8 md:translate-x-0 md:flex md:inset-auto md:justify-end">
           <a href="index.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Home</a>
           <a href="profil.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Profil</a>
+          <a href="profil.html#tentang" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Tentang</a>
+          <a href="profil.html#program" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Program</a>
+          <a href="profil.html#fasilitas" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Fasilitas</a>
           <a href="ppdb.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">PPDB</a>
           <a href="galeri.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Galeri</a>
           <a href="berita.html" onclick="closeMenu()" class="font-bold text-white hover:text-yellow-300 transition drop-shadow-md">Berita</a>
@@ -95,13 +98,36 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="bg-gray-900 text-white py-12 z-10 relative">
+    <footer class="bg-gray-900 text-white py-10 z-10 relative">
       <div class="container mx-auto px-6 text-center">
-        <img src="Assets/img/logo2.png" alt="Logo" class="w-12 h-12 mx-auto mb-4" />
+        <div class="flex justify-center mb-4">
+          <img src="Assets/img/logo2.png" alt="Logo MTs An Nashr" loading="lazy" class="w-12 h-12 object-contain" />
+        </div>
+
         <h2 class="text-2xl font-bold mb-2">MTs An Nashr</h2>
-        <p class="text-gray-500 text-sm mb-8">Jl. Balai Desa, Gg. Bambu Kuning, Jabon Mekar, Kec. Parung, Kab. Bogor</p>
-        <div class="border-t border-gray-800 pt-8">
-          <p class="text-gray-600 text-xs tracking-widest uppercase">&copy; 2026 MTs An Nashr. All rights reserved.</p>
+
+        <div class="flex flex-col justify-center items-center mb-8">
+          <div class="flex justify-center gap-6 mb-4">
+            <a href="https://www.instagram.com/mts.annashrparung/#" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#27AE60] text-2xl transition">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <a href="https://web.facebook.com/profile.php?id=100087312590437" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#27AE60] text-2xl transition">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+            <a href="https://www.youtube.com/@AnnashrParung" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-[#27AE60] text-2xl transition">
+              <ion-icon name="logo-youtube"></ion-icon>
+            </a>
+          </div>
+
+          <p class="text-gray-500 text-sm max-w-md mx-auto">
+            Jl. Balai Desa, Gg. Bambu Kuning, 02/03, Jabon Mekar, Kec. Parung, Kab. Bogor
+          </p>
+        </div>
+        
+        <div class="border-t border-gray-800 pt-6">
+          <p class="text-gray-500 text-xs tracking-widest uppercase">
+            <a href="admin.html?kunci=rahasia123" class="hover:text-gray-400 transition">&copy; 2026</a> MTs An Nashr. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
